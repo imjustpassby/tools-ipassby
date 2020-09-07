@@ -1,18 +1,28 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/image/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1 class="home--title">tools.ipassby</h1>
+    <div class="tools--container">
+      <div class="tool--item" v-for="item in tools" :key="item.label">
+        <a :href="item.path">{{ item.label }}</a>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      tools: [
+        {
+          path: '/unlockmusic',
+          label: 'Unlock Music'
+        }
+      ]
+    }
   }
-};
+}
 </script>
